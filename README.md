@@ -5,6 +5,12 @@ Employees submit tickets; technicians get a category, priority, summary, and rec
 
 The first workflow upgrade adds assigned technicians, manual priority changes, New / In Progress / Waiting / Resolved states, replies, team notes, and a persistent activity history. Knowledge-base articles and helpful counts now live in the database and are shared across browsers connected to the same server.
 
+## UI Preview
+
+Source-generated UI preview of the implemented empty-queue state, reconstructed from the UI markup and original styles. This is not an actual application screenshot; the application was not launched.
+
+![Source-generated UI preview of Resolve command center](docs/screenshots/main-interface.png)
+
 ## Start on Windows
 
 Use Node.js 20.19+ on the 20.x line, or 22.12+.
