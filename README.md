@@ -1,17 +1,28 @@
 # Resolve
 
+IT help desk with ticket workflows, persistent activity history, and AI-assisted triage using React, Express, and Prisma.
+
+## Overview
+
 Resolve is an AI-assisted IT help desk built with React/Vite, Express, Prisma, and SQLite.
 Employees submit tickets; technicians get a category, priority, summary, and recommended next action from OpenAI or local keyword triage.
 
 The first workflow upgrade adds assigned technicians, manual priority changes, New / In Progress / Waiting / Resolved states, replies, team notes, and a persistent activity history. Knowledge-base articles and helpful counts now live in the database and are shared across browsers connected to the same server.
 
-## UI Preview
+## Features
 
-Source-generated UI preview of the implemented empty-queue state, reconstructed from the UI markup and original styles. This is not an actual application screenshot; the application was not launched.
+- Create tickets and receive category, priority, summary, and next-action suggestions.
+- Assign technicians and move tickets through four workflow states.
+- Record replies, team notes, and activity history.
+- Maintain shared knowledge-base articles and helpful counts.
+- Fall back to local triage when OpenAI is unavailable.
+- Preserve existing data through additive database setup and migration.
 
-![Source-generated UI preview of Resolve command center](docs/screenshots/main-interface.png)
+## Technologies
 
-## Start on Windows
+JavaScript, React, Vite, Node.js, Express, Prisma, SQLite, and the OpenAI API with local keyword fallback.
+
+## Getting Started
 
 Use Node.js 20.19+ on the 20.x line, or 22.12+.
 Open PowerShell in the project folder:
@@ -24,6 +35,10 @@ npm.cmd run dev
 
 Open <http://localhost:5173>. The API runs on port 3001.
 `npm run dev` prepares the database automatically. A local database URL is supplied when no `.env` file is present. Port 5173 is fixed; stop another process using it before launching Resolve.
+
+## Usage
+
+Open the local app, submit a ticket, then use the support workspace to review triage, assign a technician, change status, and add replies or notes. Knowledge-base edits are shared through the server database. Technician names are labels, not authenticated accounts.
 
 ## Update an existing installation
 
@@ -60,7 +75,7 @@ Tests use disposable databases. They cover older four-ticket upgrades, repeated 
 
 See the [validation notes and screenshots](docs/phase1-validation.md).
 
-## Scope
+## Scope and limitations
 
 This version is a local support workspace. Technician assignment and activity author names are text labels. Replies and team notes are saved in the workspace. Login, enforced user roles, private notes, and message delivery are planned for the next phase.
 
@@ -73,3 +88,7 @@ This version is a local support workspace. Technician assignment and activity au
 - `POST /api/tickets/:id/comments`, `POST /api/tickets/:id/retriage`
 - `GET /api/articles`, `POST /api/articles`, `POST /api/articles/import`
 - `POST /api/articles/:id/helpful`, `DELETE /api/articles/:id`
+
+## Project Status
+
+Functional prototype for a local support workspace. Authentication, enforced roles, private notes, and message delivery are not implemented. No packaged GitHub release is available.
