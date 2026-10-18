@@ -18,6 +18,12 @@ The first workflow upgrade adds assigned technicians, manual priority changes, N
 - Fall back to local triage when OpenAI is unavailable.
 - Preserve existing data through additive database setup and migration.
 
+## UI Preview
+
+Source-generated UI preview of the implemented empty-queue state, reconstructed from the UI markup and original styles. This is not an actual application screenshot; the application was not launched.
+
+![Source-generated UI preview of Resolve command center](docs/screenshots/main-interface.png)
+
 ## Technologies
 
 JavaScript, React, Vite, Node.js, Express, Prisma, SQLite, and the OpenAI API with local keyword fallback.
